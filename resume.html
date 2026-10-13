@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume — Alif Ibnay | CEO & Full-Stack Web Architect</title>
+  <meta name="description" content="Official Resume of Alif Ibnay — CEO at PrimeSoft IT, Full-Stack Web Developer & Project Manager.">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card: #0f1626;
+      --card-border: rgba(99, 102, 241, 0.2);
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #22d3ee;
+      --primary: #6366f1;
+      --gradient: linear-gradient(135deg, #22d3ee, #6366f1, #a855f7);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 45px 50px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+    .top-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .back-btn, .print-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 99px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .back-btn {
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .back-btn:hover {
+      color: #fff;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .print-btn {
+      background: var(--gradient);
+      color: #fff;
+      border: none;
+      font-weight: 600;
+    }
+    .print-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      margin-bottom: 35px;
+    }
+    .header-info h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 38px;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 6px;
+    }
+    .header-info h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #c7d2fe;
+      margin-bottom: 12px;
+    }
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .contact-grid a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-grid a:hover {
+      color: var(--accent);
+    }
+    .photo-badge {
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      border: 3px solid var(--primary);
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.35);
+    }
+    .photo-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 30px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(99, 102, 241, 0.3);
+    }
+    .section-title span {
+      color: var(--accent);
+    }
+    p.summary {
+      color: #cbd5e1;
+      font-size: 14.5px;
+      line-height: 1.7;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 15px;
+    }
+    .skill-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 14px 18px;
+      border-radius: 12px;
+    }
+    .skill-card h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .skill-card p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .exp-item {
+      margin-bottom: 24px;
+      position: relative;
+      padding-left: 24px;
+      border-left: 2px solid rgba(99, 102, 241, 0.3);
+    }
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+    .exp-header h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .exp-header .company {
+      font-size: 14px;
+      color: #a5b4fc;
+      font-weight: 500;
+    }
+    .exp-header .period {
+      font-size: 12.5px;
+      color: var(--accent);
+      font-weight: 600;
+      background: rgba(34, 211, 238, 0.1);
+      padding: 2px 10px;
+      border-radius: 99px;
+    }
+    .exp-item ul {
+      margin-top: 8px;
+      padding-left: 18px;
+      color: #94a3b8;
+      font-size: 13.5px;
+    }
+    .exp-item li {
+      margin-bottom: 4px;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .project-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 16px 20px;
+      border-radius: 12px;
+    }
+    .project-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .project-title-row h3 {
+      font-size: 16px;
+      color: #fff;
+    }
+    .project-title-row a {
+      font-size: 12px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .project-card p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .project-tag {
+      font-size: 11px;
+      background: rgba(99, 102, 241, 0.15);
+      color: #c7d2fe;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 2px 8px;
+      border-radius: 99px;
+    }
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .edu-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 14px 18px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .edu-item h4 {
+      font-size: 14.5px;
+      color: #fff;
+    }
+    .edu-item p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 15px;
+    }
+    .stat-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+    }
+    .stat-box .num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .stat-box .lbl {
+      font-size: 11.5px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        color: #111;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        background: #fff;
+        color: #111;
+      }
+      .top-actions {
+        display: none !important;
+      }
+      .header-info h1 {
+        color: #111;
+        -webkit-text-fill-color: #111;
+      }
+      .header-info h2 {
+        color: #4338ca;
+      }
+      .contact-grid, .contact-grid a, .summary, .skill-card p, .exp-item ul, .project-card p, .edu-item p {
+        color: #334155 !important;
+      }
+      .section-title {
+        color: #1e1b4b;
+        border-bottom-color: #6366f1;
+      }
+      .exp-header h3, .project-title-row h3, .edu-item h4 {
+        color: #0f172a;
+      }
+      .skill-card, .project-card, .edu-item, .stat-box {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+      }
+      .photo-badge {
+        box-shadow: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 25px 20px; }
+      .header { flex-direction: column-reverse; align-items: center; text-align: center; }
+      .contact-grid { justify-content: center; }
+      .exp-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-actions">
+      <a href="index.html" class="back-btn">← Back to Portfolio</a>
+      <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    </div>
+
+    <header class="header">
+      <div class="header-info">
+        <h1>Alif Ibnay</h1>
+        <h2>CEO & Lead Developer — PrimeSoft IT | Full-Stack Architect</h2>
+        <div class="contact-grid">
+          <span>📧 <a href="mailto:alifibnay9ab@gmail.com">alifibnay9ab@gmail.com</a></span>
+          <span>📱 <a href="https://wa.me/8801325127420" target="_blank">+880 1325 127420</a></span>
+          <span>🌐 <a href="https://alifibnay.github.io" target="_blank">alifibnay.github.io</a></span>
+          <span>💻 <a href="https://github.com/Alifibnay" target="_blank">github.com/Alifibnay</a></span>
+          <span>💼 <a href="https://www.linkedin.com/in/alif-ibnay-620a48332/" target="_blank">LinkedIn Profile</a></span>
+          <span>📍 Sylhet / Dhaka, Bangladesh (Global Remote)</span>
+        </div>
+      </div>
+      <div class="photo-badge">
+        <img src="images/profile.jpg" alt="Alif Ibnay">
+      </div>
+    </header>
+
+    <section>
+      <h2 class="section-title"><span>01.</span> Executive Summary</h2>
+      <p class="summary">
+        Visionary Software Engineer, Tech Lead, and CEO at <strong>PrimeSoft IT</strong> with over 4+ years of hands-on experience architecting, managing, and delivering scalable enterprise web applications and high-conversion e-commerce ecosystems. Proven expertise in leading cross-functional squads, sprint management, client consultation, and shipping mission-critical digital products on tight deadlines. Passionate about performant user interfaces, robust Node.js backend systems, and translating high-level business goals into reliable technical solutions.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="section-title"><span>02.</span> Core Competencies & Tech Stack</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h4>Frontend Engineering</h4>
+          <p>React.js, Next.js, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, Responsive Design, State Management, UI/UX Micro-Interactions</p>
+        </div>
+        <div class="skill-card">
+          <h4>Backend & Architecture</h4>
+          <p>Node.js, Express.js, RESTful API Design, GraphQL, MongoDB, PostgreSQL, Serverless, Authentication (JWT/OAuth)</p>
+        </div>
+        <div class="skill-card">
+          <h4>DevOps & Cloud</h4>
+          <p>Git, GitHub Actions CI/CD, Railway, Cloudinary, Vercel, Netlify, Performance Profiling, Lighthouse Optimization</p>
+        </div>
+        <div class="skill-card">
+          <h4>Leadership & Client Delivery</h4>
+          <p>Agile / Scrum Master, Sprint Planning, Client Relationship Management, Cross-functional Mentorship, Milestone Tracking</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title"><span>03.</span> Professional Experience</h2>
+      
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <h3>CEO & Lead Developer</h3>
+            <span class="company">PrimeSoft IT</span>
+          </div>
+          <span class="period">PRESENT</span>
+        </div>
+        <ul>
+          <li>Direct company-wide technical strategy, product roadmaps, and client project deliverables.</li>
+          <li>Lead engineering teams through agile sprints, delivering full-stack solutions with 100% on-time completion rates.</li>
+          <li>Architected enterprise client applications using React, Node.js, and MongoDB with modern cloud deployments.</li>
+          <li>Manage direct client communications, technical scope definitions, and long-term retainer accounts.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <h3>Full Stack Developer</h3>
+            <span class="company">PrimeSoft IT</span>
+          </div>
+          <span class="period">2 YEARS</span>
+        </div>
+        <ul>
+          <li>Engineered scalable backend architectures, database schemas, and secure RESTful endpoints in Node.js/Express.</li>
+          <li>Implemented complex client features including cart systems, transactional emails, and third-party API webhooks.</li>
+          <li>Optimized database queries and API response times by 35% through indexing and intelligent server caching.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <h3>Senior Frontend Developer</h3>
+            <span class="company">PrimeSoft IT</span>
+          </div>
+          <span class="period">2 YEARS</span>
+        </div>
+        <ul>
+          <li>Crafted responsive, accessible, pixel-perfect user interfaces with React, JavaScript, and Tailwind CSS.</li>
+          <li>Built reusable component libraries and design tokens that expedited feature development velocity by 40%.</li>
+          <li>Conducted performance profiling, resolving paint bottlenecks and ensuring sub-second page rendering.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <h3>Web Developer</h3>
+            <span class="company">Independent & Client Projects</span>
+          </div>
+          <span class="period">2–3 YEARS</span>
+        </div>
+        <ul>
+          <li>Built custom responsive web applications, portfolios, and bespoke platforms for diverse client niches.</li>
+          <li>Collaborated directly with international stakeholders to translate business ideas into functional digital products.</li>
+          <li>Delivered comprehensive code documentation, automated deployments, and post-launch maintenance.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title"><span>04.</span> Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-title-row">
+            <h3>ShopsNest — Multi-Vendor E-Commerce Platform</h3>
+            <a href="https://shopsnest.store/products" target="_blank">Live Store ↗</a>
+          </div>
+          <p>Production e-commerce ecosystem featuring a dynamic product catalog, intuitive cart/checkout, category filtering, and mobile-first shopping experience built from scratch.</p>
+          <div class="project-tags">
+            <span class="project-tag">E-Commerce</span>
+            <span class="project-tag">React</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">Full Stack</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-title-row">
+            <h3>📚 BookVault — E-Book Management System</h3>
+            <a href="https://softwareprojectfinal-production.up.railway.app/" target="_blank">Live Preview ↗</a>
+          </div>
+          <p>Comprehensive digital library management platform featuring role-based catalog indexing, reading analytics, personalized user bookshelves, and cloud database persistence.</p>
+          <div class="project-tags">
+            <span class="project-tag">Railway</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">MongoDB</span>
+            <span class="project-tag">React</span>
+            <span class="project-tag">Cloud Storage</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-title-row">
+            <h3>PrimeSoft IT — Official Agency Portal</h3>
+            <span style="font-size: 12px; color: #a5b4fc;">In Active Development</span>
+          </div>
+          <p>Corporate platform showcasing enterprise digital solutions, bespoke software development services, sprint tracking portal, and client consultation bookings.</p>
+          <div class="project-tags">
+            <span class="project-tag">Next.js</span>
+            <span class="project-tag">TypeScript</span>
+            <span class="project-tag">Tailwind CSS</span>
+            <span class="project-tag">Agency Portal</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title"><span>05.</span> Education</h2>
+      <div class="edu-grid">
+        <div class="edu-item">
+          <div>
+            <h4>B.Sc. in Computer Science & Engineering</h4>
+            <p>Shahjalal University of Science and Technology (SUST)</p>
+          </div>
+          <span style="color: var(--accent); font-size: 13px; font-weight: 600;">Sylhet, Bangladesh</span>
+        </div>
+        <div class="edu-item">
+          <div>
+            <h4>Higher Secondary Certificate (HSC)</h4>
+            <p>Agricultural University College</p>
+          </div>
+          <span style="color: var(--muted); font-size: 13px;">Science</span>
+        </div>
+        <div class="edu-item">
+          <div>
+            <h4>Secondary School Certificate (SSC)</h4>
+            <p>Mukul Niketon High School</p>
+          </div>
+          <span style="color: var(--muted); font-size: 13px;">Science</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title"><span>06.</span> Developer Metrics & Competitive Standing</h2>
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="num" style="color: #f59e0b;">1500</div>
+          <div class="lbl">LeetCode Contest Rating</div>
+        </div>
+        <div class="stat-box">
+          <div class="num" style="color: #10b981;">30+</div>
+          <div class="lbl">LeetCode Problems Solved</div>
+        </div>
+        <div class="stat-box">
+          <div class="num" style="color: #ec4899;">2,000+</div>
+          <div class="lbl">GitHub Contributions / Commits</div>
+        </div>
+        <div class="stat-box">
+          <div class="num" style="color: #38bdf8;">500+</div>
+          <div class="lbl">GitHub Stars Earned</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
