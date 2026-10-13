@@ -76,11 +76,9 @@
       box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
     }
     .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 30px;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
     .header-info h1 {
       font-family: 'Space Grotesk', sans-serif;
@@ -113,20 +111,7 @@
     .contact-grid a:hover {
       color: var(--accent);
     }
-    .photo-badge {
-      width: 105px;
-      height: 105px;
-      border-radius: 50%;
-      border: 3px solid var(--primary);
-      overflow: hidden;
-      flex-shrink: 0;
-      box-shadow: 0 0 20px rgba(99, 102, 241, 0.35);
-    }
-    .photo-badge img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+
     .section-title {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 20px;
@@ -351,14 +336,12 @@
         background: #f8fafc;
         border: 1px solid #e2e8f0;
       }
-      .photo-badge {
-        box-shadow: none;
-      }
+
     }
 
     @media (max-width: 640px) {
       .container { padding: 25px 20px; }
-      .header { flex-direction: column-reverse; align-items: center; text-align: center; }
+      .header { text-align: center; }
       .contact-grid { justify-content: center; }
       .exp-header { flex-direction: column; }
     }
@@ -383,9 +366,6 @@
           <span>💼 <a href="https://www.linkedin.com/in/alif-ibnay-620a48332/" target="_blank">LinkedIn Profile</a></span>
           <span>📍 Sylhet / Dhaka, Bangladesh (Global Remote)</span>
         </div>
-      </div>
-      <div class="photo-badge">
-        <img src="images/profile.jpg" alt="Alif Ibnay">
       </div>
     </header>
 
